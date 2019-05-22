@@ -5,16 +5,20 @@
  */
 package irfan_uas.desktop.pkg2019;
 
+import javafx.scene.paint.Color;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author irfan
  */
-public class login extends javax.swing.JFrame {
+public class Login extends javax.swing.JFrame {
 
     /**
      * Creates new form login
      */
-    public login() {
+    
+    public Login() {
         initComponents();
     }
 
@@ -37,6 +41,8 @@ public class login extends javax.swing.JFrame {
         btnExit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBackground(new java.awt.Color(0, 191, 225));
 
         jLabel1.setText("FORM LOGIN");
 
@@ -137,10 +143,22 @@ public class login extends javax.swing.JFrame {
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
+        if(isiUsername.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null,"Kolom Username tidak boleh kosong !");
+        }else if(isiPassword.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null,"Kolom Password tidak boleh kosong !");
+        }
+        setVisible(true);
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
         // TODO add your handling code here:
+        if(isiUsername.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null,"Kolom Username tidak boleh kosong !");
+        }else if(isiPassword.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null,"Kolom Password tidak boleh kosong !");
+        }
+        setVisible(true);
     }//GEN-LAST:event_btnExitActionPerformed
 
     /**
@@ -160,20 +178,22 @@ public class login extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new login().setVisible(true);
+                new Login().setVisible(true);
+                
             }
         });
     }
@@ -188,4 +208,8 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
+
+    private void setBacground(Color BLUE) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
