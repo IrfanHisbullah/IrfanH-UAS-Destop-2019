@@ -143,22 +143,45 @@ public class Login extends javax.swing.JFrame {
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
-        if(isiUsername.getText().isEmpty()){
-            JOptionPane.showMessageDialog(null,"Kolom Username tidak boleh kosong !");
-        }else if(isiPassword.getText().isEmpty()){
-            JOptionPane.showMessageDialog(null,"Kolom Password tidak boleh kosong !");
+        
+       if(isiUsername.getText().equals("admin")) // admin = username yang akan digunakan
+        {
+            if(isiPassword.getText().equals("admin")) // admin = password
+            {
+
+                this.dispose(); //menutup form login
+              
+                //menuju form lain. Contoh disini adalah form home.
+                Homepage menu=new Homepage(); //mendeklarasikan form home sebagai variabel menu, menu disini hanya nama, jadi bebas sebenarnya
+                menu.setVisible(true); //memanggil form home
+
+            }else
+            {
+                //Jika password salah
+                JOptionPane.showMessageDialog(null,"Incorrect Password","Error",JOptionPane.ERROR_MESSAGE);//memanggil message dialog
+                isiPassword.setText("");//mengosongkan password field
+                isiPassword.requestFocus();//mengganti fokus ke password field
+            }
         }
-        setVisible(true);
+        /*
+        Jika ingin menambahkan username dan password lain, bisa ditambahkan else if disini
+        dengan script sama seperti if di atas.       
+        */
+        else
+        {
+            //jika username salah
+            JOptionPane.showMessageDialog(null,"User ID And Password is Invalid","Error",JOptionPane.ERROR_MESSAGE);
+            isiUsername.setText("");//mengosongkan text field
+            isiPassword.setText("");//mengosongkan password field
+            isiUsername.requestFocus();//mengganti fokus ke password field
+        }
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
         // TODO add your handling code here:
-        if(isiUsername.getText().isEmpty()){
-            JOptionPane.showMessageDialog(null,"Kolom Username tidak boleh kosong !");
-        }else if(isiPassword.getText().isEmpty()){
-            JOptionPane.showMessageDialog(null,"Kolom Password tidak boleh kosong !");
-        }
-        setVisible(true);
+        this.dispose();
+         Login menu=new Login(); 
+                menu.setVisible(true);
     }//GEN-LAST:event_btnExitActionPerformed
 
     /**
